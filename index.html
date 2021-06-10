@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div id="sidebar">
+
+
+            <ul>
+                <li id="new_user_li" onclick="changeToNewUser()"><span>New User</span></li>
+                <li id="user_list_li" onclick="showUserList()"><span>User List</span></li>
+            </ul>
+
+            <div>
+                <svg id="logo" width="155px" height="155px">
+                    <circle cx="20" cy="77" r="20" fill="#ae7d33" />
+                    <circle cx="28" cy="77" r="14" fill="#025955" />
+                    <circle cx="96" cy="77" r="59" fill="#fde8cd" />
+                    <circle cx="70" cy="77" r="34" fill="#025955" />
+                </svg>
+                <h1>Circadian Hotel</h1>
+            </div>
+        </div>
+        <div id="return_new_user">
+            <h2>User Registration</h2>
+            <label for="new_user_name">Name:</label>
+            <input type="text" maxlength="60" id="new_user_name" class="new_user_input user_name" placeholder="Insert Name" />
+            <label for="new_user_adress">Adress:</label>
+            <input type="text" maxlength="60" id="new_user_adress" class="new_user_input user_adress" placeholder="Insert Adress" />
+            <label for="new_user_complement">Complement:</label>
+            <input type="text" maxlength="40" id="new_user_complement" class="new_user_input user_complement" />
+            <label for="new_user_zip">Zip Code:</label>
+            <input type="number" id="new_user_zip" class="new_user_input user_zip" placeholder="xxxxx" />
+            <label for="new_user_city">City:</label>
+            <input type="text" maxlength="20" id="new_user_city" class="new_user_input user_city" placeholder="Insert City" />
+            <label for="new_user_state">State:</label>
+            <input type="text" maxlength="20" id="new_user_state" class="new_user_input user_state" placeholder="Insert State" />
+            <label for="new_user_email">E-Mail:</label>
+            <input type="email" maxlength="40" id="new_user_email" class="new_user_input user_email" placeholder="example@mail.com" />
+            <label for="new_user_phone">Phone:</label>
+            <input type="tel" maxlength="14" id="new_user_phone" class="new_user_input user_phone" placeholder="xx xxx xxx xxx" />
+            <button id="new_user_submit" class="user_submit" onclick="creatNewUser()">Register</button>
+            <span id="registration_return"></span>
+        </div>
+        <div id="return_user_list">
+            <h2>User List</h2>
+            <div>
+                <input type="number" id="input_search_user_list" />
+                <button onclick="showUserList(input_search_user_list.value)"
+                    id="button_search_user_list">Search</button>
+                <span id="searching_return_error"></span>
+
+                <button onclick="areYouSureRemove()" id="button_remove_user_list">Remove</button>
+                <span id="removing_return_error"></span>
+            </div>
+
+
+
+            <table border="1" cellspacing="0" rules="none">
+                <thead>
+                    <tr>
+                        <th class="thin_data_in_table">ID</th>
+                        <th class="large_data_in_table">Name</th>
+                        <th class="large_data_in_table">Adress</th>
+                        <th class="normal_data_in_table">Complement</th>
+                        <th class="small_data_in_table">Zip Code</th>
+                        <th class="normal_data_in_table">City</th>
+                        <th class="normal_data_in_table">State</th>
+                        <th class="large_data_in_table">E-mail</th>
+                        <th class="normal_data_in_table">Phone</th>
+                        <th class="thin_data_in_table">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table_user_list">
+                </tbody>
+            </table>
+
+        </div>
+        <div id="return_user_edit">
+            <h2 id="edit_user_id"></h2>
+            <label for="edit_user_name">Name:</label>
+            <input type="text" maxlength="60" id="edit_user_name" class="user_name" placeholder="Insert Name" />
+            <label for="edit_user_adress">Adress:</label>
+            <input type="text" maxlength="60" id="edit_user_adress" class="user_adress" placeholder="Insert Adress" />
+            <label for="edit_user_complement">Complement:</label>
+            <input type="text" maxlength="40" id="edit_user_complement" class="user_complement" />
+            <label for="edit_user_zip">Zip Code:</label>
+            <input type="number" id="edit_user_zip" class="user_zip" placeholder="xxxxx" />
+            <label for="edit_user_city">City:</label>
+            <input type="text" maxlength="20" id="edit_user_city" class="user_city" placeholder="Insert City" />
+            <label for="edit_user_state">State:</label>
+            <input type="text" maxlength="20" id="edit_user_state" class="user_state" placeholder="Insert State" />
+            <label for="edit_user_email">E-Mail:</label>
+            <input type="email" maxlength="40" id="edit_user_email" class="user_email" placeholder="example@mail.com" />
+            <label for="edit_user_phone">Phone:</label>
+            <input type="tel" maxlength="18" id="edit_user_phone" class="user_phone" placeholder="+xx xxx xxx xxx" />
+            <button id="edit_user_submit" class="user_submit" onclick="editUser(5)">Edit</button>
+            <span id="edition_return"></span>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
