@@ -232,29 +232,8 @@ app.use('/', express.static(__dirname));
 
 app.post('/user', (req, res) => {
 
-  id = req.body.id;
-  nome = req.body.nome;
-  adress = req.body.adress;
-  complement = req.body.complement;
-  zipCode = req.body.zipCode;
-  city = req.body.city;
-  state = req.body.state;
-  email = req.body.email;
-  phone = req.body.phone;
-
-  users.push(
-    {
-      "id": id,
-      "name": nome,
-      "adress": adress,
-      "complement": complement,
-      "zipCode": zipCode,
-      "city": city,
-      "state": state,
-      "email": email,
-      "phone": phone
-    });
-
+  const user = req.body;
+  users.push(JSON.stringify(user));
   console.log(users);
   res.json(users);
 });
